@@ -178,8 +178,8 @@ const translation = {
         "ave-btn-list-new":"新しい商品",
         "ave-input-search-placeholder":"商品の検索",
         "ave-btn-next-page":"さらに表示"
+        }    
     }
-}
 
 // All Config Options that should shown to the User
 const SETTINGS_USERCONFIG_DEFINES = [];
