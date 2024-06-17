@@ -159,6 +159,25 @@ const translation = {
         "ave-btn-list-new":"Neue Produkte",
         "ave-input-search-placeholder":"Produkt Suchen",
         "ave-btn-next-page":"Gelesen"
+          },
+    "ja":{
+        "ave-btn-allseen":"このページを既読にする",
+        "ave-btn-db-allseen":"すべて既読にする",
+        "ave-btn-backtotop":"トップに戻る",
+        "ave-more-details":"詳細はこちら",
+        "ave-tax-prize":"税込:",
+        "ave-show-results":{
+          1:"表示件数",
+          2:"：",
+          3:"（総数）"
+        },
+        "ave-settings":"AVE設定",
+        "ave-version":"バージョン",
+        "ave-btn-all-products":"すべての商品",
+        "ave-btn-favorites":"お気に入り",
+        "ave-btn-list-new":"新しい商品",
+        "ave-input-search-placeholder":"商品の検索",
+        "ave-btn-next-page":"さらに表示"
     }
 }
 
