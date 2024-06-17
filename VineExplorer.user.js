@@ -9,6 +9,7 @@
 // @match        *://www.amazon.de/*
 // @match        *://www.amazon.com/*
 // @match        *://www.amazon.co.uk/*
+// @match        *://www.amazon.co.jp/*
 // @license      MIT
 // @icon         https://raw.githubusercontent.com/Amazon-Vine-Explorer/AmazonVineExplorer/main/vine_logo.png
 // @run-at       document-start
