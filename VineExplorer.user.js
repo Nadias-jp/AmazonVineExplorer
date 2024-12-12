@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Amazon Vine Explorer
 // @namespace    http://tampermonkey.net/
-// @version      0.11.jp
+// @version      0.11.01.jp
 // @updateURL    https://raw.githubusercontent.com/Nadias-jp/AmazonVineExplorer/main/VineExplorer.user.js
 // @downloadURL  https://raw.githubusercontent.com/Nadias-jp/AmazonVineExplorer/main/VineExplorer.user.js
 // @description  Better View, Search and Explore for Amazon Vine Products - Vine Voices Edition
@@ -91,7 +91,7 @@ const database = new DB_HANDLER(
             langCode = document.documentElement.lang.split('-')[0];
             if(!translation[langCode]){
                 console.error(`[AVE] There is no Translation set for the language Code: ${langCode}`);
-                langCode = 'en';
+                langCode = 'ja';
             }
         });
         if (SETTINGS.DarkMode) {
