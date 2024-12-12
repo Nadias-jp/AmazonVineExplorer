@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Amazon Vine Explorer
 // @namespace    http://tampermonkey.net/
-// @version      0.11.01.jp
+// @version      0.11.02.jp
 // @updateURL    https://raw.githubusercontent.com/Nadias-jp/AmazonVineExplorer/main/VineExplorer.user.js
 // @downloadURL  https://raw.githubusercontent.com/Nadias-jp/AmazonVineExplorer/main/VineExplorer.user.js
 // @description  Better View, Search and Explore for Amazon Vine Products - Vine Voices Edition
@@ -9,7 +9,6 @@
 // @match        *://www.amazon.de/*
 // @match        *://www.amazon.com/*
 // @match        *://www.amazon.co.uk/*
-// @match        *://www.amazon.co.jp/*
 // @match        *://www.amazon.co.jp/*
 // @license      MIT
 // @icon         https://raw.githubusercontent.com/Nadias-jp/AmazonVineExplorer/main/vine_logo.png
