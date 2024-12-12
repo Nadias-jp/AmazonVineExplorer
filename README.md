@@ -1,5 +1,5 @@
 # Personal Notice
-It's nice to see that my work has been well received, even if this script is far from being neatly written. 
+It's nice to see that my work has been well received, even if this script is far from being neatly written.
 
 I saw a lot of pull requests being created.
 
@@ -23,7 +23,7 @@ This script enhances the experience on the Amazon Vine website. However, it does
 ## How to install:
 
 * Install Tampermonkey: [https://www.tampermonkey.net/](https://www.tampermonkey.net/)
-* Install Amazon Vine Explorer: [https://raw.githubusercontent.com/Amazon-Vine-Explorer/AmazonVineExplorer/main/VineExplorer.user.js](https://raw.githubusercontent.com/Amazon-Vine-Explorer/AmazonVineExplorer/main/VineExplorer.user.js)
+* Install Amazon Vine Explorer: [https://raw.githubusercontent.com/Nadias-jp/AmazonVineExplorer/main/VineExplorer.user.js](https://raw.githubusercontent.com/Nadias-jp/AmazonVineExplorer/main/VineExplorer.user.js)
 
 ## Notice:
 The Script has currently some issues processing the Tax Value.
@@ -146,4 +146,3 @@ We are aware of the issue and are working on a fix.
 ##### [24.11.2023] - Version 0.1
 
 * Start of this Project
-
