@@ -273,7 +273,7 @@ const translation = {
       2: "：",
       3: "（総数）",
     },
-    "ave-settings": "AVE設定",
+    "ave-settings": "設定",
     "ave-version": "バージョン",
     "ave-btn-all-products": "すべての商品",
     "ave-btn-favorites": "お気に入り",
