@@ -846,7 +846,7 @@ async function fastStyleChanges() {
     if (SETTINGS.EnableTopLogoChange) {
       waitForHtmlElmement("#vvp-logo-link > img", (elem) => {
         elem.src =
-          "https://raw.githubusercontent.com/Nadias-jp/AmazonVineExplorer/dev-main/vine_logo_notification_image.png";
+          "https://raw.githubusercontent.com/Nadias-jp/AmazonVineExplorer/main/vine_logo_notification_image.png";
         elem.style.height = "100px";
       });
     }
