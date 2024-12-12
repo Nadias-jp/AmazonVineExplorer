@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Amazon Vine Explorer
 // @namespace    http://tampermonkey.net/
-// @version      0.11.02.jp
+// @version      0.11.03.jp
 // @updateURL    https://raw.githubusercontent.com/Nadias-jp/AmazonVineExplorer/main/VineExplorer.user.js
 // @downloadURL  https://raw.githubusercontent.com/Nadias-jp/AmazonVineExplorer/main/VineExplorer.user.js
 // @description  Better View, Search and Explore for Amazon Vine Products - Vine Voices Edition
@@ -86,12 +86,14 @@ const database = new DB_HANDLER(
       console.log("Lets Check where we are....");
       if (SITE_IS_VINE) {
         console.log("We are on Amazon Vine"); // We are on the amazon vine site
-        waitForHtmlElmement('body', () => {
-            langCode = document.documentElement.lang.split('-')[0];
-            if(!translation[langCode]){
-                console.error(`[AVE] There is no Translation set for the language Code: ${langCode}`);
-                langCode = 'ja';
-            }
+        waitForHtmlElmement("body", () => {
+          langCode = document.documentElement.lang.split("-")[0];
+          if (!translation[langCode]) {
+            console.error(
+              `[AVE] There is no Translation set for the language Code: ${langCode}`,
+            );
+            langCode = "ja";
+          }
         });
         if (SETTINGS.DarkMode) {
           waitForHtmlElmement("body", () => {
@@ -579,7 +581,7 @@ function addLeftSideButtons(forceClean) {
   _nodesContainer.appendChild(document.createElement("p")); // A bit of Space above our Buttons
 
   const _setAllSeenBtn = createButton(
-    translation[langCode]['ave-btn-allseen'],
+    translation[langCode]["ave-btn-allseen"],
     "ave-btn-allseen",
     `width: 240px; background-color: ${SETTINGS.BtnColorMarkCurrSiteAsSeen};`,
     () => {
@@ -589,7 +591,7 @@ function addLeftSideButtons(forceClean) {
   );
 
   const _setAllSeenDBBtn = createButton(
-    translation[langCode]['ave-btn-db-allseen'],
+    translation[langCode]["ave-btn-db-allseen"],
     "ave-btn-db-allseen",
     `left: 0; width: 240px; background-color: ${SETTINGS.BtnColorMarkAllAsSeen};`,
     () => {
@@ -608,7 +610,7 @@ function addLeftSideButtons(forceClean) {
   );
 
   const _backToTopBtn = createButton(
-    translation[langCode]['ave-btn-backtotop'],
+    translation[langCode]["ave-btn-backtotop"],
     "ave-btn-backtotop",
     `width: 240px; background-color: ${SETTINGS.BtnColorBackToTop};`,
     () => {
@@ -736,7 +738,7 @@ async function createTileFromProduct(product, btnID, cb) {
                 <span class="a-button a-button-primary vvp-details-btn" id="a-autoid-${_btnAutoID}">
                     <span class="a-button-inner">
                         <input data-asin="${product.data_asin}" data-is-parent-asin="${product.data_asin_is_parent}" data-recommendation-id="${product.data_recommendation_id}" data-recommendation-type="${product.data_recommendation_type}" class="a-button-input" type="submit" aria-labelledby="a-autoid-${_btnAutoID}-announce">
-                        <span class="a-button-text" aria-hidden="true" id="a-autoid-${_btnAutoID}-announce">${translation[langCode]['ave-more-details']}</span>
+                        <span class="a-button-text" aria-hidden="true" id="a-autoid-${_btnAutoID}-announce">${translation[langCode]["ave-more-details"]}</span>
                     </span>
                 </span>
             </div>
@@ -892,7 +894,7 @@ function createTaxInfoElement(prod, index = Math.round(Math.random() * 10000)) {
   _taxElement_span.classList.add("ave-taxinfo-text");
   const _prize = prod.data_estimated_tax_prize;
   console.log("Called createTaxInfo(): We have a Taxprize of: ", _prize);
-  _taxElement_span.innerText = `${translation[langCode]['ave-tax-prize']} ${typeof _prize == "number" ? _prize : "--.--"} ${_currencySymbol}`;
+  _taxElement_span.innerText = `${translation[langCode]["ave-tax-prize"]} ${typeof _prize == "number" ? _prize : "--.--"} ${_currencySymbol}`;
   console.log("createTaxInfo(): After innerText");
 
   _taxElement.appendChild(_taxElement_span);
@@ -947,7 +949,7 @@ async function createProductSite(siteType, productArray, cb) {
   // Edit Top Line
   if (_tilesContainer) {
     const _topLine = _tilesContainer.getElementsByTagName("p")[0];
-    _topLine.innerHTML = `<p>${translation[langCode]['ave-show-results'][1]} <strong>${_fastCount}</strong> von <strong>${_productArrayLength}</strong> Ergebnissen</p>`;
+    _topLine.innerHTML = `<p>${translation[langCode]["ave-show-results"][1]} <strong>${_fastCount}</strong> von <strong>${_productArrayLength}</strong> Ergebnissen</p>`;
   }
 
   const _tilesGrid = document.getElementById("vvp-items-grid");
@@ -1419,7 +1421,7 @@ function addAveSettingsTab() {
       _upperSettingsButton.id = "vvp-ave-settings-tab";
       _upperSettingsButton.classList = "a-tab-heading";
       _upperSettingsButton.role = "presentation";
-      _upperSettingsButton.innerHTML += `<a role="tab" aria-selected="false" tabindex="-1">AVE ${translation[langCode]['ave-settings']}</a>`;
+      _upperSettingsButton.innerHTML += `<a role="tab" aria-selected="false" tabindex="-1">AVE ${translation[langCode]["ave-settings"]}</a>`;
 
       _upperSettingsButton.addEventListener("click", function () {
         const _upperButtons = document.body.querySelectorAll(
@@ -1718,7 +1720,7 @@ font-weight: bold;
 }
     </style>
 
-    <div id="ave-settings-header" style="margin-bottom: 10px"><h3>${translation[langCode]['ave-settings']} ${AVE_TITLE} - Version ${AVE_VERSION}</h3></div>
+    <div id="ave-settings-header" style="margin-bottom: 10px"><h3>${translation[langCode]["ave-settings"]} ${AVE_TITLE} - Version ${AVE_VERSION}</h3></div>
     <div id="ave-settings-container" class="ave-settings-container">
 
 
@@ -1998,7 +2000,7 @@ function addOverlays() {
     <div style="background-color: white;border-radius: 8px;width: 50%;min-width: 250px;height: 75%;overflow: hidden;">
       <div id="settingsInner"width: 100%; height: 100%;"> <!--- Inner Start -->
         <div id="settingsNav" style="background-color: #F0F2F2;border-bottom: 1px solid #D5D9D9;display: flex;height: 50px;align-items: center;padding: 0 24px;"> <!--- Nav Start -->
-         <div style="color: #444;font-size: 16px;font-weight: 700;">Amazon Vine Explorer ${translation[langCode]['ave-settings']}</div>
+         <div style="color: #444;font-size: 16px;font-weight: 700;">Amazon Vine Explorer ${translation[langCode]["ave-settings"]}</div>
          <div style="color: #444;margin-left: auto;width: 50px;height: 50px;display: flex;justify-content: center;align-items: center;font-weight: 600;font-size: larger;cursor: pointer;transform: translate(50%, 0);">
            <i class="a-icon a-icon-close"></i>
          </div>
@@ -3154,7 +3156,7 @@ function init(hasTiles) {
   _searchbarContainer.appendChild(
     createNavButton(
       "ave-btn-favorites",
-      translation[langCode]['ave-btn-all-products'],
+      translation[langCode]["ave-btn-all-products"],
       "",
       SETTINGS.BtnColorAllProducts,
       () => {
@@ -3164,7 +3166,7 @@ function init(hasTiles) {
   );
   _searchbarContainer.appendChild(
     createNavButton(
-      translation[langCode]['ave-btn-favorites'],
+      translation[langCode]["ave-btn-favorites"],
       "Favoriten",
       "",
       SETTINGS.BtnColorFavorites,
@@ -3176,7 +3178,7 @@ function init(hasTiles) {
   _searchbarContainer.appendChild(
     createNavButton(
       "ave-btn-list-new",
-      translation[langCode]['ave-btn-list-new'],
+      translation[langCode]["ave-btn-list-new"],
       "ave-new-items-btn",
       SETTINGS.BtnColorNewProducts,
       () => {
@@ -3197,7 +3199,10 @@ function init(hasTiles) {
 
   const _searchBarInput = document.createElement("input");
   _searchBarInput.setAttribute("type", "search");
-  _searchBarInput.setAttribute("placeholder", translation[langCode]['ave-input-search-placeholder']);
+  _searchBarInput.setAttribute(
+    "placeholder",
+    translation[langCode]["ave-input-search-placeholder"],
+  );
   _searchBarInput.setAttribute("name", "ave-search");
   _searchBarInput.style.cssText = `width: 30em;`;
   _searchBarInput.addEventListener("keyup", (ev) => {
@@ -3240,8 +3245,7 @@ function init(hasTiles) {
     const anchorTag = _btn.querySelector("a");
 
     //const _aveNextPageButtonText = 'Alle als gesehen markieren und Nächste <span class="a-letter-space"></span><span class="a-letter-space"></span><span class="larr">→</span>';
-    const _aveNextPageButtonText =
-      `${translation[langCode]['ave-btn-next-page']} <span class="a-letter-space"></span><span class="a-letter-space"></span><span class="larr">→</span>';
+    const _aveNextPageButtonText = `${translation[langCode]["ave-btn-next-page"]} <span class="a-letter-space"></span><span class="a-letter-space"></span><span class="larr">→</span>`;
 
     const _AveNextArrow = document.createElement("style");
     _AveNextArrow.type = "text/css";
